@@ -1,9 +1,11 @@
 
-package com.example.myrestaurants;
+package com.example.myrestaurants.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import org.parceler.Parcel;
 
+@Parcel
 public class Location {
 
     @SerializedName("city")
@@ -54,6 +56,12 @@ public class Location {
         this.state = state;
         this.address1 = address1;
         this.zipCode = zipCode;
+    }
+
+
+    @Override
+    public String toString() {
+        return String.format("%s, %s, %s %s", this.address1, this.city, this.state, this.zipCode);
     }
 
     public String getCity() {

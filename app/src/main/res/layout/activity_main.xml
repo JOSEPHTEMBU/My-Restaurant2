@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#000000">
+    tools:context=".ui.MainActivity"
+    android:background="@drawable/works">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -16,7 +16,7 @@
         android:scaleType="centerCrop" />
 
 
-    android:scaleType="centerCrop" />
+
 
     <TextView
         android:textSize="50sp"

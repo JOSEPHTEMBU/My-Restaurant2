@@ -1,8 +1,11 @@
 
-package com.example.myrestaurants;
+package com.example.myrestaurants.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import org.parceler.Parcel;
+
+@Parcel
 
 public class Category {
 

@@ -13,6 +13,7 @@ android {
     }
     buildTypes.each {
         it.buildConfigField 'String', 'YELP_API_KEY', YelpApiKey
+       // it.buildConfigField 'String', 'YELP_TOKEN', YelpToken
     }
     defaultConfig {
         applicationId "com.example.myrestaurants"
@@ -59,9 +60,13 @@ dependencies {
     implementation 'org.parceler:parceler-api:1.1.12'
     annotationProcessor 'org.parceler:parceler:1.1.12'
 
+// The latest version of firebase-ui currently at
+    //  implementation 'com.firebaseui:firebase-ui-database:4.3.1' causes compile errors so use the one below instead.
+    implementation 'com.firebaseui:firebase-ui-database:3.3.1'
+    //Add firebase SDK
+   implementation 'com.google.firebase:firebase-core:16.0.7'
 
-
-//    //retrofit
-//    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
-//    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.google.firebase:firebase-database:16.0.6'
+    //apply plugin: 'com.google.gms.google-services'
 }
+apply plugin: 'com.google.gms.google-services'

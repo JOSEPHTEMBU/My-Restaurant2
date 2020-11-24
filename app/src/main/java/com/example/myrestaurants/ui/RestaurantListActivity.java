@@ -39,7 +39,7 @@ import java.util.List;
 
 public class RestaurantListActivity extends AppCompatActivity {
     private SharedPreferences mSharedPreferences;
-    private String mRecentAddress;
+   private String mRecentAddress;
     private static final String TAG = RestaurantListActivity.class.getSimpleName();
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
     @BindView(R.id.errorTextView) TextView mErrorTextView;
@@ -51,11 +51,12 @@ public class RestaurantListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurants);
         ButterKnife.bind(this);
+
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
-        if (mRecentAddress != null) {
-            getRestaurants(mRecentAddress);
-        }
+        Log.d("Shared Pref Location", mRecentAddress);
+        getBeers();
+
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
         YelpApi client = YelpClient.getClient();
@@ -84,7 +85,7 @@ public class RestaurantListActivity extends AppCompatActivity {
             }
         });
     }
-    private void getRestaurants(String mRecentAddress) {
+    private void getBeers() {
     }
     private void showFailureMessage() {
         mErrorTextView.setText("Something went wrong. Please check your Internet connection and try again later");
